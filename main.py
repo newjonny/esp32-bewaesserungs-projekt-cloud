@@ -33,8 +33,8 @@ def on_connect(client, userdata, flags, reason_code, properties):
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
     # Subscribing to all topics, with all possible sub-topics, i.e. for all deviceMACs
-    client.subscribe("device/+/device_status", qos=0)
-    client.subscribe("device/+/soil", qos=0)
+    client.subscribe("device/+/device_status", qos=2)
+    client.subscribe("device/+/soil", qos=2)
     print("Subscribed to all topics")
 
 # The callback for when a PUBLISH message is received from the server.
